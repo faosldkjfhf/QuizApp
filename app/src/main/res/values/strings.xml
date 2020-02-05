@@ -4,4 +4,8 @@
     <string name="click_button">Submit</string>
     <string name="name_hint">What is your name?</string>
     <string name="color_hint">Color</string>
+    <string name="focusChangeText">TJ</string>
+    <string name="responseHint">That\'s a good name</string>
+    <string name="displayTextFocusChange">TJ Rocks!</string>
+    <string name="string">Score:</string>
 </resources>
