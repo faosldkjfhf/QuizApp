@@ -2,6 +2,7 @@ package com.liukevin.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
@@ -9,10 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     Button submitButton;
     EditText responseText;
-    EditText responseText2;
     TextView displayText;
     private int count = 0;
     @Override
@@ -21,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         submitButton=findViewById(R.id.clickButton);
         responseText=findViewById(R.id.responseEditText);
-        responseText2=findViewById(R.id.response2EditText);
         displayText=findViewById(R.id.textBox);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("testButton", "Hi dad! " + responseText.getText());
                 count += 1;
                 displayText.setText(getString(R.string.string) + count);
+                Random rnd = new Random();
+                int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+                v.setBackgroundColor(color);
             }
         });
         responseText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
