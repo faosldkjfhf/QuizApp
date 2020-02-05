@@ -14,7 +14,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button submitButton;
+    Button submitButton2;
     EditText responseText;
+    EditText responseText2;
     TextView displayText;
     private int count = 0;
     @Override
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         submitButton=findViewById(R.id.clickButton);
         responseText=findViewById(R.id.responseEditText);
         displayText=findViewById(R.id.textBox);
+        submitButton2=findViewById(R.id.clickButton2);
+        responseText2=findViewById(R.id.response2EditText);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
                 displayText.setText(getString(R.string.string) + count);
                 Random rnd = new Random();
                 int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+                v.setBackgroundColor(color);
+            }
+        });
+        submitButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                int color = Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
                 v.setBackgroundColor(color);
             }
         });
