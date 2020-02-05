@@ -28,5 +28,17 @@ public class MainActivity extends AppCompatActivity {
                 displayText.setText(displayText.getText() + " " + responseText.getText());
             }
         });
+        responseText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus) {
+                    if(responseText.getText().equals("TJ")) {
+                        displayText.setText("TJ Rocks!");
+                        responseText.setText("");
+                        responseText.setHint("That's a good name");
+                    }
+                }
+            }
+        });
     }
 }
